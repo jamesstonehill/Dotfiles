@@ -55,6 +55,14 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+#Functions
+	# Custom cd
+	c() {
+		cd $1;
+		ls;
+	}
+	alias cd="c"
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
