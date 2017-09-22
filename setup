@@ -2,43 +2,21 @@
 
 require 'pathname'
 
-# zsh setup
-puts "Setting up ZSH"
+def backup_file(file_path)
+  puts 'Backing up ' + file_path.to_s
 
-ZSHRC_DESTINATION_PATH = Pathname.new("../test.txt")
-ZSHRC_SOURCE_PATH = Pathname.new("./zsh/.zshrc")
+  new_path = BACKUP_PATH + file_path.basename
 
-if ZSHRC_DESTINATION_PATH.exist?
-  puts "A .zshrc file already exists."
-  puts "Would you like to overwrite it or append to it? (o/A)"
-  response = gets.chomp.downcase
-
-  acceptable_answers = ["o", "a", ""]
-
-  while !acceptable_answers.include?(response)
-    puts "That was not a valid input. Please try again."
-    response = gets.chomp.downcase
-  end
-
-  should_overwrite = response == "o"
-
-  File.open(ZSHRC_SOURCE_PATH, "r") do |source_file|
-    file_operator = if should_overwrite
-                      "w"
-                    else
-                      "a+"
-                    end
-
-    File.open(ZSHRC_DESTINATION_PATH, file_operator) do |destination_file|
-      source_file.each do |line|
-        destination_file << line
-      end
-    end
-  end
-
-else
-puts "HANDLE THIS"
-
+  File.rename(file_path, new_path)
 end
 
-puts "DONE"
+
+
+BACKUP_PATH = Pathname.new('./backups')
+
+ZSHRC_DESTINATION_PATH = Pathname.new('../.zshrc')
+ZSHRC_SOURCE_PATH = Pathname.new('./zsh/.zshrc')
+
+if ZSHRC_DESTINATION_PATH.exist?
+  backup_file(ZSHRC_SOURCE_PATH)
+end
