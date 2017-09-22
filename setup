@@ -4,7 +4,7 @@ require 'pathname'
 
 BACKUP_PATH = Pathname.new('./backups')
 DOTFILE_DESTINATION_DIR = Pathname.new('..')
-DOTFILE_SOURCE_DIR = Pathname.new('./source')
+SOURCE_DOTFILES_DIR = Pathname.new('./source_dotfiles')
 
 def backup_file(file_path)
   Dir.mkdir(BACKUP_PATH) unless BACKUP_PATH.exist?
@@ -16,7 +16,7 @@ def backup_file(file_path)
 end
 
 def source_directories
-  DOTFILE_SOURCE_DIR.children
+  SOURCE_DOTFILES_DIR.children
 end
 
 def source_dotfiles
