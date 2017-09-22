@@ -2,21 +2,33 @@
 
 require 'pathname'
 
+BACKUP_PATH = Pathname.new('./backups')
+DOTFILE_DESTINATION_DIR = Pathname.new('..')
+DOTFILE_SOURCE_DIR = Pathname.new('./source')
+
 def backup_file(file_path)
-  puts 'Backing up ' + file_path.to_s
+  Dir.mkdir(BACKUP_PATH) unless BACKUP_PATH.exist?
+  puts "backing up #{file_path.basename} into #{BACKUP_PATH.realpath}"
 
   new_path = BACKUP_PATH + file_path.basename
 
   File.rename(file_path, new_path)
 end
 
-
-
-BACKUP_PATH = Pathname.new('./backups')
-
-ZSHRC_DESTINATION_PATH = Pathname.new('../.zshrc')
-ZSHRC_SOURCE_PATH = Pathname.new('./zsh/.zshrc')
-
-if ZSHRC_DESTINATION_PATH.exist?
-  backup_file(ZSHRC_SOURCE_PATH)
+def source_directories
+  DOTFILE_SOURCE_DIR.children
 end
+
+def source_dotfiles
+  source_directories.map { |dir| dir.children }.flatten
+end
+
+def backup_existing_files
+  source_dotfiles.each do |source_dotfile|
+    destination_dotfile = DOTFILE_DESTINATION_DIR + source_dotfile.basename
+
+    backup_file(destination_dotfile) if destination_dotfile.exist?
+  end
+end
+
+backup_existing_files
