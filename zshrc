@@ -92,7 +92,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # JAMES STONEHILL'S ALIESES
 alias rabbitmq-server="/usr/local/sbin/rabbitmq-server"
@@ -102,6 +102,8 @@ alias bom="rm -rf bower_components && bower cache clean && bower install"
 alias yom="rm -rf node_modules && yarn cache clean && yarn"
 alias nombom="nom && bom"
 alias yombom="yom && bom"
+
+alias vim="nvim"
 
 eval "$(rbenv init -)"
 
