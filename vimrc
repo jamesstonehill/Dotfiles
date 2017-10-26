@@ -1,10 +1,16 @@
 call plug#begin()
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-dispatch'
+
 " General
 Plug 'tpope/vim-sensible'
 
 " Text editing
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-surround'
+" Plug 'tomtom/tcomment_vim'
 
 "Search and replace
 Plug 'kien/ctrlp.vim'
@@ -14,9 +20,9 @@ Plug 'JazzCore/ctrlp-cmatcher'
 Plug 'w0rp/ale'
 
 " Language Support
-Plug 'sheerun/vim-polyglot'
-Plug 'joukevandermaas/vim-ember-hbs'
-Plug 'dustinfarris/vim-htmlbars-inline-syntax'
+" Plug 'sheerun/vim-polyglot'
+" Plug 'joukevandermaas/vim-ember-hbs'
+" Plug 'dustinfarris/vim-htmlbars-inline-syntax'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -31,11 +37,16 @@ Plug 'scrooloose/nerdtree'
 
 " Testing
 Plug 'janko-m/vim-test'
+
+" File editing
+"Plug 'henrik/rename.vim'
 call plug#end()
 
 " ------------------------------------------------------------------------------
 " General Settings
 " ------------------------------------------------------------------------------
+let mapleader = ","
+
 set nocompatible                             " Turn off vi compatibility.
 set encoding=utf8
 
@@ -64,6 +75,7 @@ au BufNewFile,BufRead *.thor set filetype=ruby
 " White Space
 " ------------------------------------------------------------------------------
 set tabstop=2                     " Set tab to equal 4 spaces.
+set softtabstop=2                 " Set soft tabs equal to 4 spaces.
 set shiftwidth=2                  " Set auto indent spacing.
 set shiftround                    " Shift to the next round tab stop.
 set expandtab                     " Expand tabs into spaces.
@@ -72,9 +84,21 @@ set smarttab                      " Insert spaces in front of lines.
 set list listchars=tab:»·,trail:·,nbsp:· " Show leading whitespace
 set nojoinspaces                  " Use one space, not two, after punctuation.
 
+" Strip Trailing Whitespace
+function! StripTrailingWhitespace()
+    if !&binary && &modifiable && &filetype != "diff"
+        let l:winview = winsaveview()
+        %s/\s\+$//e
+        let @/=""
+        call winrestview(l:winview)
+    endif
+endfunction
+nnoremap <leader>W :call StripTrailingWhitespace()<CR>
+
 " ------------------------------------------------------------------------------
 " Ctrl-p
 " ------------------------------------------------------------------------------
+let g:ctrlp_user_command = "ag %s -l --nocolor -g ''"
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 " ------------------------------------------------------------------------------
@@ -84,23 +108,11 @@ set incsearch                     " Show partial matches as search is entered.
 set hlsearch                      " Highlight search patterns.
 set ignorecase                    " Enable case insensitive search.
 set smartcase                     " Disable case insensitivity if mixed case.
+
+" ------------------------------------------------------------------------------
+"  Status Line
+" ------------------------------------------------------------------------------
 set laststatus=2                  " Always display the status line
-
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  " let g:ctrlp_use_caching = 0
-
-  if !exists(":Ag")
-    command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-    nnoremap \ :Ag<SPACE>
-  endif
-endif
 
 " ------------------------------------------------------------------------------
 "  Presentation
@@ -145,8 +157,16 @@ endif
 " ------------------------------------------------------------------------------
 " Testing
 " ------------------------------------------------------------------------------
+" make test commands execute using dispatch.vim
+let test#strategy = "dispatch"
+
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
+
+" ------------------------------------------------------------------------------
+" Functions
+" ------------------------------------------------------------------------------
+
