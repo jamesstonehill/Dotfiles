@@ -109,6 +109,15 @@ set hlsearch                      " Highlight search patterns.
 set ignorecase                    " Enable case insensitive search.
 set smartcase                     " Disable case insensitivity if mixed case.
 
+set grepprg=ag\ --nogroup\ --nocolor
+
+if !exists(":Ag")
+  command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+  nnoremap \ :Ag<SPACE>
+endif
+
+cnoreabbrev ag Ag
+
 " ------------------------------------------------------------------------------
 "  Status Line
 " ------------------------------------------------------------------------------
