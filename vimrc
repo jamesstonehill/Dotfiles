@@ -174,6 +174,18 @@ nmap <silent> <leader>g :TestVisit<CR>
 " Functions
 " ------------------------------------------------------------------------------
 
+" Strip Trailing Whitespace
+function! StripTrailingWhitespace()
+    if !&binary && &modifiable && &filetype != "diff"
+        let l:winview = winsaveview()
+        %s/\s\+$//e
+        let @/=""
+        call winrestview(l:winview)
+    endif
+endfunction
+nnoremap <leader>W :call StripTrailingWhitespace()<CR>
+
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
