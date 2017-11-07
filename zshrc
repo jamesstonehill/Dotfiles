@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+export ZSH=/Users/jamesstonehill/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -54,6 +54,7 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source ~/.bin/tmuxinator.zsh
 
 #Functions
 	# Custom cd
@@ -93,6 +94,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export EDITOR='nvim'
+export NVM_DIR="$HOME/.nvm"
+  . "/usr/local/opt/nvm/nvm.sh"
 
 # JAMES STONEHILL'S ALIESES
 alias rabbitmq-server="/usr/local/sbin/rabbitmq-server"
@@ -109,3 +112,4 @@ eval "$(rbenv init -)"
 
 # The next line is direnv
 if which direnv > /dev/null; then eval "$(direnv hook zsh)"; fi
+export PATH="/usr/local/sbin:$PATH"

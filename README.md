@@ -10,3 +10,6 @@ enter the comand `:CheckHealth`.
 
 You'll also need the silver searcher.
 https://github.com/ggreer/the_silver_searcher
+
+You'll need the tmuxinator for the zshrc config
+https://github.com/tmuxinator/tmuxinator
