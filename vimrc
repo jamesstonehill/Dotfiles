@@ -40,7 +40,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'janko-m/vim-test'
 
 " File editing
-"Plug 'henrik/rename.vim'
+Plug 'henrik/rename.vim'
 call plug#end()
 
 " ------------------------------------------------------------------------------
