@@ -150,6 +150,9 @@ set colorcolumn=+1
 set number
 set numberwidth=5
 
+" Quit vim if NERDTree is last window open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 " ------------------------------------------------------------------------------
 " Linter Config
 " ------------------------------------------------------------------------------
