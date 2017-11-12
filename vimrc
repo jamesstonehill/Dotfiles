@@ -21,8 +21,6 @@ Plug 'w0rp/ale'
 
 " Language Support
 Plug 'sheerun/vim-polyglot'
-" Plug 'joukevandermaas/vim-ember-hbs'
-" Plug 'dustinfarris/vim-htmlbars-inline-syntax'
 
 " Git
 Plug 'tpope/vim-fugitive'
