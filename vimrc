@@ -10,7 +10,7 @@ Plug 'tpope/vim-sensible'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
-" Plug 'tomtom/tcomment_vim'
+Plug 'scrooloose/nerdcommenter'
 
 "Search and replace
 Plug 'kien/ctrlp.vim'
@@ -69,6 +69,9 @@ filetype plugin on    " Enable filetype-specific plugins
 
 " treat *.thor files as ruby files
 au BufNewFile,BufRead *.thor set filetype=ruby
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
 
 " ------------------------------------------------------------------------------
 " White Space
