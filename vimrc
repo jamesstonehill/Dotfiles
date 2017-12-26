@@ -1,7 +1,6 @@
 call plug#begin()
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
-Plug 'tpope/vim-dispatch'
 
 " General
 Plug 'tpope/vim-sensible'
@@ -102,6 +101,7 @@ nnoremap <leader>W :call StripTrailingWhitespace()<CR>
 " ------------------------------------------------------------------------------
 let g:ctrlp_user_command = "ag %s -l --nocolor -g ''"
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+let g:ctrlp_use_caching = 0
 
 " ------------------------------------------------------------------------------
 "  Search and Replace
@@ -111,12 +111,17 @@ set hlsearch                      " Highlight search patterns.
 set ignorecase                    " Enable case insensitive search.
 set smartcase                     " Disable case insensitivity if mixed case.
 
+" ------------------------------------------------------------------------------
+"  Ag/grep
+" ------------------------------------------------------------------------------
 set grepprg=ag\ --nogroup\ --nocolor
 
-if !exists(":Ag")
-  command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-  nnoremap \ :Ag<SPACE>
-endif
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" bind \ (backward slash) to grep shortcut
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap \ :Ag<SPACE>
 
 cnoreabbrev ag Ag
 
@@ -162,8 +167,7 @@ let g:ale_sign_column_always = 1
 " ------------------------------------------------------------------------------
 " Testing
 " ------------------------------------------------------------------------------
-" make test commands execute using dispatch.vim
-let test#strategy = "dispatch"
+let test#strategy = "neovim" " https://github.com/janko-m/vim-test#strategies
 
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
