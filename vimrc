@@ -10,6 +10,7 @@ Plug 'ervandew/supertab'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
+Plug 'raimondi/delimitmate'
 
 "Search and replace
 Plug 'kien/ctrlp.vim'
@@ -163,6 +164,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Linter Config
 " ------------------------------------------------------------------------------
 let g:ale_sign_column_always = 1
+let g:airline#extensions#ale#enabled = 1
 
 " ------------------------------------------------------------------------------
 " Testing
