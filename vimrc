@@ -33,6 +33,7 @@ Plug 'joshdick/onedark.vim'
 " Layout
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
+Plug 'justincampbell/vim-eighties' " sensible buffer resizing
 
 " Testing
 Plug 'janko-m/vim-test'
@@ -102,7 +103,6 @@ nnoremap <leader>W :call StripTrailingWhitespace()<CR>
 " ------------------------------------------------------------------------------
 let g:ctrlp_user_command = "ag %s -l --nocolor -g ''"
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
-let g:ctrlp_use_caching = 0
 
 " ------------------------------------------------------------------------------
 "  Search and Replace
