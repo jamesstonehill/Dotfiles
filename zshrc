@@ -108,6 +108,8 @@ alias yombom="yom && bom"
 
 alias vim="nvim"
 
+alias rm=trash # can install trash with brew
+
 eval "$(rbenv init -)"
 
 # The next line is direnv
