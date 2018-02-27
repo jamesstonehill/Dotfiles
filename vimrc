@@ -54,6 +54,11 @@ set nobackup                                 " Disable backups.
 set nowritebackup
 set noswapfile
 
+set spelllang=en_gb
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.markdown setlocal spell
+set complete+=kspell
+
 " Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
