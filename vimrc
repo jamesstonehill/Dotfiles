@@ -47,7 +47,6 @@ call plug#end()
 " ------------------------------------------------------------------------------
 let mapleader = ","
 
-set nocompatible                             " Turn off vi compatibility.
 set encoding=utf8
 
 set nobackup                                 " Disable backups.
