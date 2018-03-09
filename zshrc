@@ -84,8 +84,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export EDITOR='nvim'
-export NVM_DIR="$HOME/.nvm"
-  . "/usr/local/opt/nvm/nvm.sh"
 
 # JAMES STONEHILL'S ALIESES
 alias rabbitmq-server="/usr/local/sbin/rabbitmq-server"
@@ -105,3 +103,7 @@ eval "$(rbenv init -)"
 # The next line is direnv
 if which direnv > /dev/null; then eval "$(direnv hook zsh)"; fi
 export PATH="/usr/local/sbin:$PATH"
+
+# asdf version manager
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
