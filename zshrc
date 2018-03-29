@@ -104,6 +104,5 @@ eval "$(rbenv init -)"
 if which direnv > /dev/null; then eval "$(direnv hook zsh)"; fi
 export PATH="/usr/local/sbin:$PATH"
 
-# asdf version manager
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
