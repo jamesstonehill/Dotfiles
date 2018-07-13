@@ -86,8 +86,6 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='nvim'
 
 # JAMES STONEHILL'S ALIESES
-alias rabbitmq-server="/usr/local/sbin/rabbitmq-server"
-alias mailer-worker="WORKERS=MailerWorker bin/rake sneakers:run"
 alias nom="rm -rf node_modules && npm cache clean && npm install"
 alias bom="rm -rf bower_components && bower cache clean && bower install"
 alias yom="rm -rf node_modules && yarn cache clean && yarn"
