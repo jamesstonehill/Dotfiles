@@ -92,8 +92,6 @@ set shiftwidth=2                  " Set auto indent spacing.
 set shiftround                    " Shift to the next round tab stop.
 set expandtab                     " Expand tabs into spaces.
 
-set smarttab                      " Insert spaces in front of lines.
-set list listchars=tab:»·,trail:·,nbsp:· " Show leading whitespace
 set nojoinspaces                  " Use one space, not two, after punctuation.
 
 " ------------------------------------------------------------------------------
@@ -105,7 +103,6 @@ let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 " ------------------------------------------------------------------------------
 "  Search and Replace
 " ------------------------------------------------------------------------------
-set incsearch                     " Show partial matches as search is entered.
 set hlsearch                      " Highlight search patterns.
 set ignorecase                    " Enable case insensitive search.
 set smartcase                     " Disable case insensitivity if mixed case.
