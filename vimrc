@@ -77,9 +77,6 @@ filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
-" treat *.thor files as ruby files
-au BufNewFile,BufRead *.thor set filetype=ruby
-
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
