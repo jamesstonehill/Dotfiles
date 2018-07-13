@@ -4,6 +4,7 @@ Plug 'tpope/vim-rails'
 
 " General
 Plug 'tpope/vim-sensible'
+
 " Text editing
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-endwise'
@@ -39,6 +40,7 @@ Plug 'justincampbell/vim-eighties' " sensible buffer resizing
 Plug 'janko-m/vim-test'
 
 " File editing
+Plug 'pbrisbin/vim-mkdir'
 Plug 'henrik/rename.vim'
 call plug#end()
 
