@@ -1,7 +1,4 @@
 call plug#begin()
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-rails'
-
 " General
 Plug 'tpope/vim-sensible'
 
@@ -42,6 +39,10 @@ Plug 'janko-m/vim-test'
 " File editing
 Plug 'pbrisbin/vim-mkdir'
 Plug 'henrik/rename.vim'
+
+" Ruby Stuff
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-rails'
 call plug#end()
 
 " ------------------------------------------------------------------------------
