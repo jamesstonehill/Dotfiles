@@ -89,6 +89,7 @@ set softtabstop=2                 " Set soft tabs equal to 4 spaces.
 set shiftwidth=2                  " Set auto indent spacing.
 set shiftround                    " Shift to the next round tab stop.
 set expandtab                     " Expand tabs into spaces.
+set list listchars=tab:»·,trail:·,nbsp:· " Show leading whitespace
 
 set nojoinspaces                  " Use one space, not two, after punctuation.
 
