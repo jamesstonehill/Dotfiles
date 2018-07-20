@@ -85,7 +85,6 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
 
-# JAMES STONEHILL'S ALIESES
 alias nom="rm -rf node_modules && npm cache clean && npm install"
 alias bom="rm -rf bower_components && bower cache clean && bower install"
 alias yom="rm -rf node_modules && yarn cache clean && yarn"
@@ -93,8 +92,6 @@ alias nombom="nom && bom"
 alias yombom="yom && bom"
 
 alias vim="nvim"
-
-alias rm=trash # can install trash with brew
 
 eval "$(rbenv init -)"
 
