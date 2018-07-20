@@ -1,6 +1,4 @@
 # Dotfiles
-These dotfiles are still very much a work in progress so I wouldn't recommend
-copying them wholesale, but you might find some things you like.
 
 ## Setup
 You'll need to follow the setup instructions for the JazzCore/ctrlp-cmatcher. It requires some manually installation.
