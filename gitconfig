@@ -1,6 +1,3 @@
-[user]
-	name = James Stonehill
-	email = jamesstonehill@gmail.com
 [core]
 	autocrlf = false
 	safecrlf = true
