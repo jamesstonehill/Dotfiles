@@ -22,6 +22,7 @@ Plug 'sheerun/vim-polyglot'
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'tommcdo/vim-fubitive' " vim-fugitive :Gbrowse support for BitBucket
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 
