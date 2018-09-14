@@ -12,6 +12,7 @@ Plug 'raimondi/delimitmate'
 "Search and replace
 Plug 'kien/ctrlp.vim'
 Plug 'JazzCore/ctrlp-cmatcher'
+Plug 'google/vim-searchindex'
 
 " Linters
 Plug 'w0rp/ale'
