@@ -15,3 +15,7 @@ My dotfiles have a few dependencies. Most of these can be installed with
 To install these dependencies with homebrew cd into the Dotfiles directory and
 type `brew bundle`. You can comment out any dependencies you don't want in the
 Brewfile.
+
+### pryrc/irbrc
+My pryrc and irbrc use a gem called `awesome_print`. You can install by running `gem
+install awesome_print`.
