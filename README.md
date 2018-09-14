@@ -16,6 +16,12 @@ To install these dependencies with homebrew cd into the Dotfiles directory and
 type `brew bundle`. You can comment out any dependencies you don't want in the
 Brewfile.
 
+### vim
+To install the vim packages first install
+[vim-plug](https://github.com/junegunn/vim-plug).
+
+Then inside vim run `:PlugInstall`.
+
 ### pryrc/irbrc
 My pryrc and irbrc use a gem called `awesome_print`. You can install by running `gem
 install awesome_print`.
