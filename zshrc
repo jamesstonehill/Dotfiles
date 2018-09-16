@@ -85,6 +85,8 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
 
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 alias nom="rm -rf node_modules && npm cache clean && npm install"
 alias bom="rm -rf bower_components && bower cache clean && bower install"
 alias yom="rm -rf node_modules && yarn cache clean && yarn"
