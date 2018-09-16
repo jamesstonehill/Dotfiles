@@ -4,11 +4,6 @@ smarter people. Let me know if you find them useful or if you have any
 suggestions for how they could be improved!
 
 ## Setup
-You'll need to follow the setup instructions for the vim plugin
-[ctrlp-cmatcher](https://github.com/JazzCore/ctrlp-cmatcher). It requires some
-manual installation.
-
-## Dependencies
 My dotfiles have a few dependencies. Most of these can be installed with
 [homebrew](https://brew.sh/).
 
@@ -16,11 +11,20 @@ To install these dependencies with homebrew cd into the Dotfiles directory and
 type `brew bundle`. You can comment out any dependencies you don't want in the
 Brewfile.
 
-### vim
+### zshrc
+I use [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh). You'll need to
+install oh-my-zsh for my zshrc config to work. To download it see the
+instructions on the oh-my-zsh github page.
+
+### vimrc
 To install the vim packages first install
 [vim-plug](https://github.com/junegunn/vim-plug).
 
 Then inside vim run `:PlugInstall`.
+
+After installing the vim plugins, you'll also need to do some manual
+installation for the [ctrlp-cmatcher](https://github.com/JazzCore/ctrlp-cmatcher).
+You can find details for this on the github page for this plugin.
 
 ### pryrc/irbrc
 My pryrc and irbrc use a gem called `awesome_print`. You can install by running `gem
