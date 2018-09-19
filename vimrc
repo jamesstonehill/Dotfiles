@@ -58,6 +58,8 @@ set nobackup                                 " Disable backups.
 set nowritebackup
 set noswapfile
 
+set updatetime=500                           " Refresh vim-gitgutter more often
+
 set spelllang=en_gb
 autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.markdown setlocal spell
