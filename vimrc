@@ -50,6 +50,8 @@ call plug#end()
 " ------------------------------------------------------------------------------
 " General Settings
 " ------------------------------------------------------------------------------
+set nocompatible                             " Disable Vi comptability
+
 let mapleader = ","
 
 set encoding=utf8
