@@ -151,7 +151,13 @@ let g:airline#extensions#ale#enabled = 1
 " ------------------------------------------------------------------------------
 " Testing
 " ------------------------------------------------------------------------------
-let test#strategy = "neovim" " https://github.com/janko-m/vim-test#strategies
+
+" When using neovim use "neovim" test strategy and remap <C-\><C-n> to <C-o> to
+" allow you to enter normal mode easier and scroll through test output.
+if has('nvim')
+  let test#strategy = "neovim"
+  tmap <C-o> <C-\><C-n>
+end
 
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
