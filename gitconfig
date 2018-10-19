@@ -1,3 +1,6 @@
+[user]
+	name = <YOUR NAME>
+	email = <YOUR EMAIL>
 [core]
 	autocrlf = false
 	safecrlf = true
