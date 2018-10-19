@@ -8,3 +8,5 @@
 	required = true
 [push]
 	default = current
+[pager]
+	branch = false
