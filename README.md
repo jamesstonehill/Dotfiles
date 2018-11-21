@@ -4,12 +4,30 @@ from other, smarter people. Let me know if you find them useful or if you have
 any suggestions for how they could be improved!
 
 ## Setup
+First, start by copying whatever dotfiles you want into your home directory.
+
+```shell
+cp zshrc ~/.zshrc
+cp vimrc ~/.vimrc
+cp gitconfig ~/.gitconfig
+cp gitignore_global ~/.gitignore_global
+cp irbrc ~/.irbrc
+cp gemrc ~/.gemrc
+cp pryrc ~/.pryrc
+```
+
+Then install the dependencies.
+
 My dotfiles have a few dependencies. Most of these can be installed with
 [homebrew](https://brew.sh/).
 
 To install these dependencies with homebrew clone this repo then `cd` into the
 Dotfiles directory and type `brew bundle`. You can comment out any dependencies
 you don't want in the Brewfile.
+
+Some of my dotfiles have Ruby gem dependencies. To install these first make sure
+you are using a non-system Ruby version (run `rbenv version` if you're using
+rbenv). And then run `bundle install` inside this directory.
 
 Below I've included some instructions for setup specific to individual dotfiles.
 
@@ -52,7 +70,8 @@ using so I recommend reading up on the package before installing it.
 
 ### pryrc/irbrc
 My pryrc and irbrc use a gem called `awesome_print`. You can install by running
-`gem install awesome_print`.
+`gem install awesome_print` or by running `bundle install` inside this
+directory.
 
 ### gitconfig
 You'll need to replace `<YOUR NAME>` and `<YOUR EMAIL>` with your name and
