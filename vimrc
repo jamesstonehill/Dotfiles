@@ -10,7 +10,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'raimondi/delimitmate'
 
 "Search and replace
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'JazzCore/ctrlp-cmatcher'
 Plug 'google/vim-searchindex'
 
