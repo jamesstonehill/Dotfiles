@@ -4,26 +4,44 @@ from other, smarter people. Let me know if you find them useful or if you have
 any suggestions for how they could be improved!
 
 ## Setup
-First, start by copying whatever dotfiles you want into your home directory.
-
+First start by cloning this repo into your home directory.
 ```shell
-cp zshrc ~/.zshrc
-cp vimrc ~/.vimrc
-cp gitconfig ~/.gitconfig
-cp gitignore_global ~/.gitignore_global
-cp irbrc ~/.irbrc
-cp gemrc ~/.gemrc
-cp pryrc ~/.pryrc
+cd ~
+git clone https://github.com/jamesstonehill/Dotfiles.git
 ```
 
-Then install the dependencies.
+Then copy or symlink the dotfiles you want to use.
+```shell
+# Method 1: Copying
+# Recommended if you want to add your own config.
+cp ~/Dotfiles/zshrc ~/.zshrc
+cp ~/Dotfiles/vimrc ~/.vimrc
+cp ~/Dotfiles/gitconfig ~/.gitconfig
+cp ~/Dotfiles/gitignore_global ~/.gitignore_global
+cp ~/Dotfiles/irbrc ~/.irbrc
+cp ~/Dotfiles/gemrc ~/.gemrc
+cp ~/Dotfiles/pryrc ~/.pryrc
 
+# Method 2: Symlinking
+# Recommended if you want to be able to `git pull` updates easily.
+ln -s ~/Dotfiles/zshrc ~/.zshrc
+ln -s ~/Dotfiles/vimrc ~/.vimrc
+ln -s ~/Dotfiles/gitconfig ~/.gitconfig
+ln -s ~/Dotfiles/gitignore_global ~/.gitignore_global
+ln -s ~/Dotfiles/irbrc ~/.irbrc
+ln -s ~/Dotfiles/gemrc ~/.gemrc
+ln -s ~/Dotfiles/pryrc ~/.pryrc
+```
+Personally, I symlink everything other than my `.gitconfig` because you need to
+fill in your own email and name for that file.
+
+### Installing Dependencies
 My dotfiles have a few dependencies. Most of these can be installed with
 [homebrew](https://brew.sh/).
 
-To install these dependencies with homebrew clone this repo then `cd` into the
-Dotfiles directory and type `brew bundle`. You can comment out any dependencies
-you don't want in the Brewfile.
+To install these dependencies with homebrew `cd` into the Dotfiles directory and
+type `brew bundle`. You can comment out any dependencies you don't want in the
+Brewfile.
 
 Some of my dotfiles have Ruby gem dependencies. To install these first make sure
 you are using a non-system Ruby version (run `rbenv version` if you're using
