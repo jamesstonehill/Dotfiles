@@ -54,12 +54,13 @@ source $ZSH/oh-my-zsh.sh
 #source ~/.bin/tmuxinator.zsh
 
 #Functions
-	# Custom cd
-	c() {
-		cd $1;
-		ls;
-	}
-	alias cd="c"
+
+# Custom cd
+c() {
+  cd $1;
+  ls;
+}
+alias cd="c"
 
 # User configuration
 
@@ -92,6 +93,7 @@ alias bom="rm -rf bower_components && bower cache clean && bower install"
 alias yom="rm -rf node_modules && yarn cache clean && yarn"
 alias nombom="nom && bom"
 alias yombom="yom && bom"
+alias delete_merged_branches='git branch --merged | egrep -v "(^\*|master|development|dev)" | xargs git branch -d'
 
 alias vim="nvim"
 
