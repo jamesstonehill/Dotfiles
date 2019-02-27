@@ -73,8 +73,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Move to previous buffer with ,,
-nnoremap <leader><leader> <C-^>
+" Move to previous buffer with gb
+nnoremap gb <C-^>
 
 " ------------------------------------------------------------------------------
 " Text Editing
