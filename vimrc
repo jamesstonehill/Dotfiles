@@ -149,6 +149,16 @@ set number
 let g:ale_sign_column_always = 1
 let g:airline#extensions#ale#enabled = 1
 
+nnoremap <leader>f :ALEFix<CR>
+
+let g:ale_fixers = {
+\    '*': ['remove_trailing_lines', 'trim_whitespace'],
+\    'ruby': ['rubocop'],
+\    'elixir': ['mix_format'],
+\    'javascript': ['prettier'],
+\    'markdown': ['prettier']
+\ }
+
 " ------------------------------------------------------------------------------
 " Testing
 " ------------------------------------------------------------------------------
@@ -164,22 +174,6 @@ nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
-
-" ------------------------------------------------------------------------------
-" Functions
-" ------------------------------------------------------------------------------
-
-" Strip Trailing Whitespace
-function StripTrailingWhitespace()
-  if !&binary && &filetype != 'diff'
-    normal mz
-    normal Hmy
-    %s/\s\+$//e
-    normal 'yz<CR>
-    normal `z
-  endif
-endfunction
-nnoremap <leader>W :call StripTrailingWhitespace()<CR>
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
