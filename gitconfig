@@ -1,15 +1,15 @@
 [user]
-	name = <YOUR NAME>
-	email = <YOUR EMAIL>
+  name = <YOUR NAME>
+  email = <YOUR EMAIL>
 [core]
-	autocrlf = false
-	safecrlf = true
-	excludesfile = ~/.gitignore_global
+  autocrlf = false
+  safecrlf = true
+  excludesfile = ~/.gitignore_global
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
 [push]
-	default = current
+  default = current
 [pager]
-	branch = false
+  branch = false
