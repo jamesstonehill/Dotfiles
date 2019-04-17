@@ -146,13 +146,10 @@ set number
 " ------------------------------------------------------------------------------
 " Linter Config
 " ------------------------------------------------------------------------------
-let g:ale_completion_enabled = 1
 let g:ale_sign_column_always = 1
 let g:airline#extensions#ale#enabled = 1
 
 nnoremap <leader>f :ALEFix<CR>
-nnoremap gd :ALEGoToDefinition<CR>
-nnoremap gr :ALEFindReferences<CR>
 
 let g:ale_fixers = {
 \    '*': ['remove_trailing_lines', 'trim_whitespace'],
