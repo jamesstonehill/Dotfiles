@@ -86,6 +86,9 @@ alias cd="c"
 
 export EDITOR='nvim'
 
+# https://github.com/jarun/nnn/wiki/nnn-as-default-file-manager
+export NNN_USE_EDITOR=1
+
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 alias nom="rm -rf node_modules && npm cache clean && npm install"

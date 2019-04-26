@@ -8,3 +8,6 @@ brew "neovim"
 brew "direnv"
 brew "nvm"
 brew "rbenv"
+
+# Zsh & Vim stuff
+brew "nnn"
