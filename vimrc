@@ -32,7 +32,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Layout
 Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/nerdtree'
+Plug 'mcchrish/nnn.vim'
 Plug 'justincampbell/vim-eighties' " sensible buffer resizing
 
 " Testing

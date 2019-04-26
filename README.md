@@ -74,6 +74,13 @@ configuration to compile the C code that comes with the
 find details for this on the github page for this plugin
 [here](https://github.com/JazzCore/ctrlp-cmatcher#installation).
 
+#### Homebrew Dependencies
+
+Some of my vim plugins require binaries (like `nnn` and `ag`) that can be
+installed with `brew`. You can install all of these by running `brew bundle`
+inside this directory, or you can pick and choose the ones you want by looking
+in the Brewfile.
+
 #### Linting
 
 For code linting, I use [ALE](https://github.com/w0rp/ale). ALE acts as a
