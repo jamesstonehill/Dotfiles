@@ -16,6 +16,7 @@ Plug 'google/vim-searchindex'
 
 " Linters
 Plug 'w0rp/ale'
+Plug 'jparise/vim-graphql'
 
 " Language Support
 Plug 'sheerun/vim-polyglot'
