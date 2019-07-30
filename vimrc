@@ -68,6 +68,8 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.markdown setlocal spell
 set complete+=kspell
 
+set clipboard+=unnamedplus                   " Copy into system clipboard
+
 " Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
