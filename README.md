@@ -76,7 +76,7 @@ find details for this on the github page for this plugin
 
 #### Homebrew Dependencies
 
-Some of my vim plugins require binaries (like `nnn` and `ag`) that can be
+Some of my vim plugins require binaries (like `ag`) that can be
 installed with `brew`. You can install all of these by running `brew bundle`
 inside this directory, or you can pick and choose the ones you want by looking
 in the Brewfile.
