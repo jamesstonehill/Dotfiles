@@ -49,9 +49,9 @@ To install these dependencies with homebrew `cd` into the Dotfiles directory and
 type `brew bundle`. You can comment out any dependencies you don't want in the
 Brewfile.
 
-Some of my dotfiles have Ruby gem dependencies. To install these first make sure
-you are using a non-system Ruby version (run `rbenv version` if you're using
-rbenv). And then run `bundle install` inside this directory.
+Some of my dotfiles have Ruby gem dependencies. If you have a working ruby
+version running locally you can install these by running `bundle install` inside
+this directory.
 
 Below I've included some instructions for setup specific to individual dotfiles.
 
