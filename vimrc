@@ -62,7 +62,7 @@ set noswapfile
 
 set updatetime=500                           " Refresh vim-gitgutter more often
 
-set spelllang=en_gb
+set spelllang=en_gb,en_us
 autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.markdown setlocal spell
 set complete+=kspell
