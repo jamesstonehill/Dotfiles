@@ -68,12 +68,6 @@ To install the vim packages first install
 
 Then inside vim run `:PlugInstall`.
 
-After installing the vim plugins, you'll also need to do some manual
-configuration to compile the C code that comes with the
-[ctrlp-cmatcher](https://github.com/JazzCore/ctrlp-cmatcher) plugin. You can
-find details for this on the github page for this plugin
-[here](https://github.com/JazzCore/ctrlp-cmatcher#installation).
-
 #### Homebrew Dependencies
 
 Some of my vim plugins require binaries (like `ag`) that can be

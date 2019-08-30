@@ -11,7 +11,6 @@ Plug 'raimondi/delimitmate'
 
 "Search and replace
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'JazzCore/ctrlp-cmatcher'
 Plug 'google/vim-searchindex'
 
 " Linters
@@ -106,7 +105,6 @@ set nojoinspaces                  " Use one space, not two, after punctuation.
 " Ctrl-p
 " ------------------------------------------------------------------------------
 let g:ctrlp_user_command = "ag %s -l --nocolor -g ''"
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 " ------------------------------------------------------------------------------
 "  Search and Replace
