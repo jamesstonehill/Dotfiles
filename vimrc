@@ -61,12 +61,6 @@ set nowritebackup
 set noswapfile
 
 set updatetime=500                           " Refresh vim-gitgutter more often
-
-set spelllang=en_gb,en_us
-autocmd BufRead,BufNewFile *.md setlocal spell
-autocmd BufRead,BufNewFile *.markdown setlocal spell
-set complete+=kspell
-
 set clipboard+=unnamedplus                   " Copy into system clipboard
 
 " Quicker window movement
@@ -88,6 +82,19 @@ filetype plugin on    " Enable filetype-specific plugins
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
+
+" ------------------------------------------------------------------------------
+" Spell Checking
+" ------------------------------------------------------------------------------
+set spelllang=en_gb,en_us
+
+augroup customSpellChecking
+  autocmd!
+  autocmd FileType markdown setlocal spell
+  autocmd FileType gitcommit setlocal spell
+augroup END
+
+set complete+=kspell
 
 " ------------------------------------------------------------------------------
 " White Space
