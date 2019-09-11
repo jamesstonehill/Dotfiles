@@ -33,6 +33,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Layout
 Plug 'vim-airline/vim-airline'
 Plug 'justincampbell/vim-eighties' " sensible buffer resizing
+Plug 'scrooloose/nerdtree'
 
 " Testing
 Plug 'janko-m/vim-test'
@@ -70,6 +71,11 @@ nnoremap <C-l> <C-w>l
 
 " Move to previous buffer with gb
 nnoremap gb <C-^>
+
+" NERDTree
+nnoremap <Leader>nt :NERDTreeToggle<CR>
+nnoremap <Leader>nf :NERDTreeFind<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " ------------------------------------------------------------------------------
 " Text Editing
