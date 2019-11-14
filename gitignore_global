@@ -2,3 +2,4 @@
 .env
 .envrc
 stellar.yaml
+.mypy_cache
