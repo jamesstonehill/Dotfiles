@@ -169,6 +169,7 @@ let g:ale_fixers = {
 \    'ruby': ['rubocop'],
 \    'elixir': ['mix_format'],
 \    'javascript': ['prettier'],
+\    'python': ['black'],
 \    'markdown': ['prettier']
 \ }
 
