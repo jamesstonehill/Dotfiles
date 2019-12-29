@@ -147,16 +147,23 @@ set laststatus=2                  " Always display the status line
 " ------------------------------------------------------------------------------
 "  Presentation
 " ------------------------------------------------------------------------------
-
 colorscheme jellybeans
 let g:airline_theme='jellybeans'
 
-" Make it obvious where 80 characters is
+" Numbers
+set number
+
+" ------------------------------------------------------------------------------
+"  Line Length
+" ------------------------------------------------------------------------------
 set textwidth=80
 set colorcolumn=+1
 
-" Numbers
-set number
+augroup setPythonTextWidth
+  autocmd!
+  " The Black Python code formatter uses 88 as its default line-length.
+  autocmd FileType python setlocal textwidth=88
+augroup END
 
 " ------------------------------------------------------------------------------
 " Linter Config
