@@ -98,6 +98,7 @@ alias delete_merged_branches='git branch --merged | egrep -v "(^\*|master|develo
 alias vim="nvim"
 
 eval "$(rbenv init -)"
+eval "$(pyenv init -)"
 
 # The next line is direnv
 if which direnv > /dev/null; then eval "$(direnv hook zsh)"; fi
