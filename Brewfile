@@ -9,3 +9,5 @@ brew "direnv"
 brew "nvm"
 brew "rbenv"
 brew "pyenv"
+
+brew "tldr" # https://github.com/tldr-pages/tldr
