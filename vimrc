@@ -1,4 +1,4 @@
-call plug#begin()
+call plug#begin('~/Dotfiles/plugged')
 " General
 Plug 'tpope/vim-sensible'
 

@@ -1,0 +1,113 @@
+if !exists('g:eighties_enabled')
+  let g:eighties_enabled = 1
+endif
+
+if !exists('g:eighties_minimum_width')
+  let g:eighties_minimum_width = 80
+endif
+
+if !exists('g:eighties_extra_width')
+  let g:eighties_extra_width = 0
+endif
+
+if !exists('g:eighties_compute')
+  let g:eighties_compute = 1
+endif
+
+function! eighties#EightiesResize()
+  if g:eighties_enabled && !s:in_file_browser()
+    let l:size = s:new_width()
+
+    if l:size > s:current_width()
+      exec "silent vertical resize " . l:size
+    end
+  endif
+endfunction
+
+function! eighties#EightiesEnable(enabled)
+  let g:eighties_enabled = a:enabled
+endfunction
+
+function! s:in_file_browser()
+  if s:nerd_tree_just_opened()
+    return 1
+  endif
+
+  let patterns = ["NERD_tree", "vimpanel"]
+  if exists('g:eighties_bufname_additional_patterns')
+    let patterns = patterns + g:eighties_bufname_additional_patterns
+  endif
+
+  for pattern in patterns
+    if bufname("%") =~ pattern
+      return 1
+    endif
+  endfor
+
+  return
+endfunction
+
+function! s:nerd_tree_just_opened()
+  if exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) == -1
+    return 1
+  endif
+
+  return
+endfunction
+
+function! s:new_width()
+  return g:eighties_minimum_width + s:total_left_width() + g:eighties_extra_width
+endfunction
+
+function! s:current_width()
+  return winwidth(0)
+endfunction
+
+function! s:total_left_width()
+  if !(g:eighties_compute)
+    return 0
+  endif
+
+  return s:sign_width() + s:line_number_width()
+endfunction
+
+function! s:sign_width()
+  let l:current_file = bufnr("%")
+
+  if !bufexists(l:current_file) || !filereadable(l:current_file)
+    return 0
+  endif
+
+  redir => signs
+  silent exe ":sign place file=" . l:current_file
+  redir END
+
+  if len(split(signs, '\n')) >= 3
+    return 2
+  endif
+
+  return 0
+endfunction
+
+function! s:line_number_width()
+  if !(&number)
+    return 0
+  endif
+
+  let l:numberwidth = &numberwidth
+  let l:smallestwidth = strlen(line('$'))
+
+  return s:max([l:smallestwidth, l:numberwidth]) + 1
+endfunction
+
+function! s:max(list)
+  let l:max = 0
+
+  for current in a:list
+    if current > l:max
+      let l:max = current
+    endif
+  endfor
+
+  return l:max
+endfunction
