@@ -116,11 +116,6 @@ set list listchars=tab:»·,trail:·,nbsp:· " Show leading whitespace
 set nojoinspaces                  " Use one space, not two, after punctuation.
 
 " ------------------------------------------------------------------------------
-" Ctrl-p
-" ------------------------------------------------------------------------------
-let g:ctrlp_user_command = "ag %s -l --nocolor -g ''"
-
-" ------------------------------------------------------------------------------
 "  Search and Replace
 " ------------------------------------------------------------------------------
 set hlsearch                      " Highlight search patterns.
@@ -130,14 +125,19 @@ set smartcase                     " Disable case insensitivity if mixed case.
 " ------------------------------------------------------------------------------
 "  Ag/grep
 " ------------------------------------------------------------------------------
-set grepprg=ag\ --nogroup\ --nocolor
+if executable('ag')
+  " If ag is available, we should use it because it's much faster than grep!
+  let g:ctrlp_user_command = "ag %s -l --nocolor -g ''"
+
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " bind \ (backward slash) to grep shortcut
+  command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+  nnoremap \ :Ag<SPACE>
+endif
 
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-" bind \ (backward slash) to grep shortcut
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ag<SPACE>
 
 " ------------------------------------------------------------------------------
 "  Status Line
