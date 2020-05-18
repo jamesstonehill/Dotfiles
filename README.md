@@ -106,12 +106,3 @@ directory.
 
 You'll need to replace `<YOUR NAME>` and `<YOUR EMAIL>` with your name and
 email.
-
-### Iterm Profile
-
-I have my iTerm2 profile exported as the `com.googlecode.iterm2.plist` XML file.
-This file represents all the configuration for my iTerm profile. If you would
-like to apply this configuration to your iTerm setup, use the instructions in
-[this
-article](http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/)
-to source your profile's settings from this file.
