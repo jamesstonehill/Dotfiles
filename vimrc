@@ -171,16 +171,32 @@ augroup END
 let g:ale_sign_column_always = 1
 let g:airline#extensions#ale#enabled = 1
 
-nnoremap <leader>f :ALEFix<CR>
+" ------------------------------------------------------------------------------
+" Code fixers
+" ------------------------------------------------------------------------------
 
+" Configure fixers on a filetype basis. Most of these fixers do not come
+" pre-installed so you will need to install them individually. E.g.
+"
+" gem install rubocop
+" npm install --global prettier
+" pip install black
+" etc.
 let g:ale_fixers = {
 \    '*': ['remove_trailing_lines', 'trim_whitespace'],
 \    'ruby': ['rubocop'],
 \    'elixir': ['mix_format'],
 \    'javascript': ['prettier'],
 \    'python': ['black'],
+\    'json': ['prettier'],
+\    'yaml': ['prettier'],
+\    'graphql': ['prettier'],
+\    'html': ['prettier'],
 \    'markdown': ['prettier']
 \ }
+
+" Activate the above fixers
+nnoremap <leader>f :ALEFix<CR>
 
 " ------------------------------------------------------------------------------
 " Testing
