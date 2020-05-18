@@ -3,6 +3,7 @@ brew "neovim"
 brew "python"
 brew "python3"
 brew "the_silver_searcher"
+brew "hadolint"
 
 # Zsh stuff
 brew "direnv"
