@@ -159,10 +159,13 @@ set number
 set textwidth=80
 set colorcolumn=+1
 
-augroup setPythonTextWidth
+augroup setPythonTextOptions
   autocmd!
   " The Black Python code formatter uses 88 as its default line-length.
   autocmd FileType python setlocal textwidth=88
+
+  " Disable 'Auto-wrap text using textwidth' because python is whitespace aware
+  autocmd FileType python setlocal formatoptions-=t
 augroup END
 
 " ------------------------------------------------------------------------------
