@@ -22,6 +22,7 @@ cp ~/Dotfiles/zshrc ~/.zshrc
 cp ~/Dotfiles/vimrc ~/.vimrc
 cp ~/Dotfiles/gitconfig ~/.gitconfig
 cp ~/Dotfiles/gitignore_global ~/.gitignore_global
+cp ~/Dotfiles/gitattributes ~/.gitattributes
 cp ~/Dotfiles/irbrc ~/.irbrc
 cp ~/Dotfiles/gemrc ~/.gemrc
 cp ~/Dotfiles/pryrc ~/.pryrc
@@ -32,6 +33,7 @@ ln -s ~/Dotfiles/zshrc ~/.zshrc
 ln -s ~/Dotfiles/vimrc ~/.vimrc
 ln -s ~/Dotfiles/gitconfig ~/.gitconfig
 ln -s ~/Dotfiles/gitignore_global ~/.gitignore_global
+ln -s ~/Dotfiles/gitattributes ~/.gitattributes
 ln -s ~/Dotfiles/irbrc ~/.irbrc
 ln -s ~/Dotfiles/gemrc ~/.gemrc
 ln -s ~/Dotfiles/pryrc ~/.pryrc
