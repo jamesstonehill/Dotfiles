@@ -106,3 +106,10 @@ directory.
 
 You'll need to replace `<YOUR NAME>` and `<YOUR EMAIL>` with your name and
 email.
+
+### Terminal
+
+For a terminal I use [iTerm2](https://www.iterm2.com/). I've included an iTerm
+theme that matches my vim theme in this repo for ease. This file is the
+Jellybeans.itermcolors file. See iTerm2 documentation on how to setup this
+theme.
