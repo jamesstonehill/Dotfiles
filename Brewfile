@@ -1,3 +1,13 @@
+brew "cask"
+
+# GUI Apps
+cask "docker"
+cask "slack"
+cask "iterm2"
+cask "1password"
+cask "caffeine"
+cask "google-chrome"
+
 # Vim stuff
 brew "neovim"
 brew "python"
