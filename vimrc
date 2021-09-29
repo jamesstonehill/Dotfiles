@@ -99,6 +99,7 @@ augroup customSpellChecking
   autocmd!
   autocmd FileType markdown setlocal spell
   autocmd FileType gitcommit setlocal spell
+  autocmd FileType text setlocal spell
 augroup END
 
 set complete+=kspell
