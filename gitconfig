@@ -11,5 +11,9 @@
   required = true
 [push]
   default = current
+[pull]
+  ff = only
 [pager]
   branch = false
+[alias]
+  cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop\\|main' | xargs git branch -d"
