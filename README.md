@@ -13,25 +13,10 @@ cd ~
 git clone https://github.com/jamesstonehill/Dotfiles.git
 ```
 
-Then copy or symlink the dotfiles you want to use.
-
-```shell
-# Method 1: Copying
-# Recommended if you want to add your own config.
-cp ~/Dotfiles/zshrc ~/.zshrc
-cp ~/Dotfiles/vimrc ~/.vimrc
-cp ~/Dotfiles/gitconfig ~/.gitconfig
-cp ~/Dotfiles/gitignore_global ~/.gitignore_global
-cp ~/Dotfiles/gitattributes ~/.gitattributes
-cp ~/Dotfiles/irbrc ~/.irbrc
-cp ~/Dotfiles/gemrc ~/.gemrc
-cp ~/Dotfiles/pryrc ~/.pryrc
-
-# Method 2: Symlinking
-# Recommended if you want to be able to `git pull` updates easily.
+Then symlink the files that don't require alteration
+```bash
 ln -s ~/Dotfiles/zshrc ~/.zshrc
-ln -s ~/Dotfiles/vimrc ~/.vimrc
-ln -s ~/Dotfiles/gitconfig ~/.gitconfig
+ln -s ~/Dotfiles/init.vim ~/.config/nvim/init.vim
 ln -s ~/Dotfiles/gitignore_global ~/.gitignore_global
 ln -s ~/Dotfiles/gitattributes ~/.gitattributes
 ln -s ~/Dotfiles/irbrc ~/.irbrc
@@ -39,8 +24,10 @@ ln -s ~/Dotfiles/gemrc ~/.gemrc
 ln -s ~/Dotfiles/pryrc ~/.pryrc
 ```
 
-Personally, I symlink everything other than my `.gitconfig` because you need to
-fill in your own email and name for that file.
+And copy and edit the files that do require alteration
+```bash
+cp ~/Dotfiles/gitconfig ~/.gitconfig
+```
 
 ### Installing Dependencies
 
