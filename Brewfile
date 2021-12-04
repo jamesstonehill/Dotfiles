@@ -6,8 +6,6 @@ cask "slack"
 cask "iterm2"
 cask "1password"
 cask "google-chrome"
-cask "caffeine"
-cask "muzzel"
 
 # Vim stuff
 brew "neovim"
@@ -16,9 +14,7 @@ brew "hadolint"
 
 # Zsh stuff
 brew "direnv"
-brew "nvm"
-brew "rbenv"
-brew "pyenv"
+brew "asdf"
 
 brew "tldr" # https://github.com/tldr-pages/tldr
 

@@ -22,6 +22,7 @@ ln -s ~/Dotfiles/gitattributes ~/.gitattributes
 ln -s ~/Dotfiles/irbrc ~/.irbrc
 ln -s ~/Dotfiles/gemrc ~/.gemrc
 ln -s ~/Dotfiles/pryrc ~/.pryrc
+ln -s ~/Dotfiles/asdfrc ~/.asdfrc
 ```
 
 And copy and edit the files that do require alteration
