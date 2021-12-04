@@ -23,6 +23,7 @@ ln -s ~/Dotfiles/irbrc ~/.irbrc
 ln -s ~/Dotfiles/gemrc ~/.gemrc
 ln -s ~/Dotfiles/pryrc ~/.pryrc
 ln -s ~/Dotfiles/asdfrc ~/.asdfrc
+ln -s ~/Dotfiles/default-gems ~/.default-gems
 ```
 
 And copy and edit the files that do require alteration

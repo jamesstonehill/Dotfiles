@@ -1,0 +1,13 @@
+bundler
+pry
+
+# Used for Ruby Linting
+brakeman
+rails_best_practices
+reek
+rubocop
+ruby
+solargraph
+
+# Used pryrc/irbrc
+awesome_print
