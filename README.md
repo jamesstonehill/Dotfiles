@@ -59,6 +59,15 @@ To install the vim packages first install
 
 Then inside vim run `:PlugInstall`.
 
+In order to enable the linting and fixing functionality from Vim ALE, you'll
+need to have some dependencies installed.
+```bash
+npm install -g prettier
+pip install black
+brew install hadolint
+# etc...
+```
+
 #### Homebrew Dependencies
 
 Some of my vim plugins require binaries (like `ag`) that can be
