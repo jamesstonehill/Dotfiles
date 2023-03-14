@@ -27,8 +27,8 @@ Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 
 " Themes
-Plug 'nanotech/jellybeans.vim'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'nanotech/jellybeans.vim'
+" Plug 'vim-airline/vim-airline-themes'
 
 " Layout
 Plug 'vim-airline/vim-airline'
@@ -45,6 +45,10 @@ Plug 'henrik/rename.vim'
 " Ruby Stuff
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
+
+" Code Completion
+Plug 'github/copilot.vim'
+
 call plug#end()
 
 " ------------------------------------------------------------------------------
@@ -148,8 +152,8 @@ set laststatus=2                  " Always display the status line
 " ------------------------------------------------------------------------------
 "  Presentation
 " ------------------------------------------------------------------------------
-colorscheme jellybeans
-let g:airline_theme='jellybeans'
+" colorscheme jellybeans
+" let g:airline_theme='jellybeans'
 
 " Numbers
 set number
