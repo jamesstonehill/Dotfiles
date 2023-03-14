@@ -16,7 +16,10 @@ git clone https://github.com/jamesstonehill/Dotfiles.git
 Then symlink the files that don't require alteration
 ```bash
 ln -s ~/Dotfiles/zshrc ~/.zshrc
-ln -s ~/Dotfiles/init.vim ~/.config/nvim/init.vim
+
+ln -s ~/Dotfiles/init.lua ~/.config/nvim/init.lua
+ln -s ~/Dotfiles/lua/plugins.lua ~/.config/nvim/lua/plugins.lua
+
 ln -s ~/Dotfiles/gitignore_global ~/.gitignore_global
 ln -s ~/Dotfiles/gitattributes ~/.gitattributes
 ln -s ~/Dotfiles/irbrc ~/.irbrc
@@ -113,3 +116,7 @@ For a terminal I use [iTerm2](https://www.iterm2.com/). I've included an iTerm
 theme that matches my vim theme in this repo for ease. This file is the
 Jellybeans.itermcolors file. See iTerm2 documentation on how to setup this
 theme.
+
+In order to enable powerline fonts you'll want to enable the option here in
+iterm.
+https://apple.stackexchange.com/a/413332/223301

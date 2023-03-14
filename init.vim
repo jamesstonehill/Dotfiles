@@ -84,7 +84,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " ------------------------------------------------------------------------------
 " Text Editing
 " ------------------------------------------------------------------------------
-syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
@@ -123,7 +122,6 @@ set nojoinspaces                  " Use one space, not two, after punctuation.
 " ------------------------------------------------------------------------------
 "  Search and Replace
 " ------------------------------------------------------------------------------
-set hlsearch                      " Highlight search patterns.
 set ignorecase                    " Enable case insensitive search.
 set smartcase                     " Disable case insensitivity if mixed case.
 
@@ -200,6 +198,7 @@ let g:ale_fixers = {
 \    'yaml': ['prettier'],
 \    'graphql': ['prettier'],
 \    'html': ['prettier'],
+\    'terraform': ['terraform'],
 \    'markdown': ['prettier']
 \ }
 
