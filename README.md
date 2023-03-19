@@ -60,49 +60,9 @@ To install the vim packages first install
 
 Then inside vim run `:PackerInstall`.
 
-In order to enable the lsp functionality you'll need to have some dependencies installed.
-```bash
-npm install -g pyright
-
-npm install -g prettier
-pip install black
-brew install hadolint
-# etc...
-```
-
-#### Homebrew Dependencies
-
-Some of my vim plugins require binaries (like `ag`) that can be
-installed with `brew`. You can install all of these by running `brew bundle`
-inside this directory, or you can pick and choose the ones you want by looking
-in the Brewfile.
-
 #### Linting
 
-For code linting, I use [ALE](https://github.com/w0rp/ale). ALE acts as a
-universal interface to underlying linting libraries. However, ALE does not
-pre-install these linting libraries and will only make use of them when they are
-already available. This means that in order to make full use of ALE you need to
-install some additional libraries. You can see the exact breakdown of their
-supported linting libraries broken down by language
-[here](https://github.com/w0rp/ale#supported-languages).
-
-For example, in order to install the full set of Ruby linting packages that ALE
-supports do the following:
-
-```shell
-gem install brakeman rails_best_practices reek rubocop ruby solargraph
-```
-
-However, you may not want all of a language's linting packages as many have
-overlapping functionality and some may not be relevant to the framework you are
-using so I recommend reading up on the package before installing it.
-
-### pryrc/irbrc
-
-My pryrc and irbrc use a gem called `awesome_print`. You can install by running
-`gem install awesome_print` or by running `bundle install` inside this
-directory.
+I'm using [mason.nvim](https://github.com/williamboman/mason.nvim) to install linting packages. To view the available linting packages run in vim `:Mason`. This will bring up a window of the various libraries you can install. Then to install one run something like `:MasonInstall black`.
 
 ### gitconfig
 

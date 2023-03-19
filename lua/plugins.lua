@@ -23,6 +23,8 @@ vim.cmd([[
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
+  use "nvim-lua/plenary.nvim" -- Required by a bunch of packages but not directly used
+
   -- Text Editing
   use 'ervandew/supertab'
   use 'tpope/vim-endwise'
@@ -59,8 +61,11 @@ return require('packer').startup(function(use)
   -- Code Completion
   use 'github/copilot.vim'
 
-  -- LSP Config
+  -- LSP Config (order of packages is important!!!)
+  use "williamboman/mason.nvim" -- LSP client for Mason
+  use "williamboman/mason-lspconfig.nvim" -- LSP config for Mason
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+  use 'jose-elias-alvarez/null-ls.nvim' -- LSP config for null-ls
 
   use 'sheerun/vim-polyglot' -- Syntax highlighting
 end)

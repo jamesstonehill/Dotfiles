@@ -1,3 +1,27 @@
+require("mason").setup()
+require("mason-lspconfig").setup {
+  ensure_installed = {
+    "pyright",
+    "tsserver",
+    "terraformls",
+    "docker_compose_language_service",
+    "dockerls",
+  },
+}
+
+null_ls = require("null-ls")
+
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
+null_ls.setup({
+    debug = true,
+    sources = {
+        null_ls.builtins.formatting.black,
+        --null_ls.builtins.diagnostics.eslint,
+        --null_ls.builtins.completion.spell,
+    },
+})
+
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
