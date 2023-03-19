@@ -16,10 +16,8 @@ git clone https://github.com/jamesstonehill/Dotfiles.git
 Then symlink the files that don't require alteration
 ```bash
 ln -s ~/Dotfiles/zshrc ~/.zshrc
-
 ln -s ~/Dotfiles/init.lua ~/.config/nvim/init.lua
-ln -s ~/Dotfiles/lua/plugins.lua ~/.config/nvim/lua/plugins.lua
-
+ln -s ~/Dotfiles/lua/ ~/.config/nvim/
 ln -s ~/Dotfiles/gitignore_global ~/.gitignore_global
 ln -s ~/Dotfiles/gitattributes ~/.gitattributes
 ln -s ~/Dotfiles/irbrc ~/.irbrc
@@ -60,11 +58,12 @@ instructions on the oh-my-zsh github page.
 To install the vim packages first install
 [vim-plug](https://github.com/junegunn/vim-plug).
 
-Then inside vim run `:PlugInstall`.
+Then inside vim run `:PackerInstall`.
 
-In order to enable the linting and fixing functionality from Vim ALE, you'll
-need to have some dependencies installed.
+In order to enable the lsp functionality you'll need to have some dependencies installed.
 ```bash
+npm install -g pyright
+
 npm install -g prettier
 pip install black
 brew install hadolint

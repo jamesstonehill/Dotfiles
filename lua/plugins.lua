@@ -58,4 +58,9 @@ return require('packer').startup(function(use)
 
   -- Code Completion
   use 'github/copilot.vim'
+
+  -- LSP Config
+  use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+
+  use 'sheerun/vim-polyglot' -- Syntax highlighting
 end)

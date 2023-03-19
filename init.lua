@@ -1,4 +1,6 @@
 require('plugins')
+require('language_server_config')
+
 
 -- ----------------------------------------------------------------------------
 -- General Settings
@@ -84,8 +86,8 @@ if executable('ag')
   nnoremap \ :Ag<SPACE>
 endif
 
-" bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" bind F to grep word under cursor
+" nnoremap F :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 ]])
 
 -- ----------------------------------------------------------------------------
@@ -119,15 +121,6 @@ augroup setPythonTextOptions
   autocmd FileType python setlocal formatoptions-=t
 augroup END
 ]])
-
--- ----------------------------------------------------------------------------
--- Linter Config
--- ----------------------------------------------------------------------------
-
-
--- ----------------------------------------------------------------------------
--- Code fixers
--- ----------------------------------------------------------------------------
 
 -- ----------------------------------------------------------------------------
 -- Testing

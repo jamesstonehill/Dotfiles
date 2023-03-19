@@ -5,12 +5,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 # Used for Ruby Linting
-gem 'brakeman'
-gem 'rails_best_practices'
-gem 'reek'
-gem 'rubocop'
-gem 'ruby'
-gem 'solargraph'
+gem "ruby-lsp", require: false
+gem 'rails_best_practices', require: false
 
 # Used pryrc/irbrc
-gem 'awesome_print'
+gem 'awesome_print', require: false
