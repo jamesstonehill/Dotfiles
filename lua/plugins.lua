@@ -26,7 +26,6 @@ return require('packer').startup(function(use)
   use "nvim-lua/plenary.nvim" -- Required by a bunch of packages but not directly used
 
   -- Text Editing
-  use 'ervandew/supertab'
   use 'tpope/vim-endwise'
   use 'tpope/vim-surround'
   use 'scrooloose/nerdcommenter'
@@ -59,7 +58,16 @@ return require('packer').startup(function(use)
   use 'henrik/rename.vim'
 
   -- Code Completion
-  use 'github/copilot.vim'
+  --use 'github/copilot.vim'
+
+  -- CMP
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
 
   -- LSP Config (order of packages is important!!!)
   use "williamboman/mason.nvim" -- LSP client for Mason
