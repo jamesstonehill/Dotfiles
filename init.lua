@@ -33,6 +33,13 @@ set nowritebackup
 set noswapfile
 ]])
 
+
+-- Instead of using <Tab> use <C-ENTER> to accept the completion
+vim.cmd([[
+imap <silent><script><expr> <C-ENTER> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+]])
+
 -- ----------------------------------------------------------------------------
 -- Spell Checking
 -- ----------------------------------------------------------------------------

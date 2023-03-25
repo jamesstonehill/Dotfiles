@@ -58,7 +58,7 @@ return require('packer').startup(function(use)
   use 'henrik/rename.vim'
 
   -- Code Completion
-  --use 'github/copilot.vim'
+  use 'github/copilot.vim'
 
   -- CMP
   use 'hrsh7th/cmp-nvim-lsp'
