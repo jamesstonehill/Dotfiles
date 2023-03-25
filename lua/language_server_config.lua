@@ -14,10 +14,12 @@ null_ls = require("null-ls")
 local cmp = require'cmp'
 local luasnip = require 'luasnip'
 
-local has_words_before = function()
-  local cursor = vim.api.nvim_win_get_cursor(0)
-  return (vim.api.nvim_buf_get_lines(0, cursor[1] - 1, cursor[1], true)[1] or ''):sub(cursor[2], cursor[2]):match('%s') 
-end
+require("luasnip.loaders.from_vscode").lazy_load()
+
+--local has_words_before = function()
+  --local cursor = vim.api.nvim_win_get_cursor(0)
+  --return (vim.api.nvim_buf_get_lines(0, cursor[1] - 1, cursor[1], true)[1] or ''):sub(cursor[2], cursor[2]):match('%s') 
+--end
 
 cmp.setup({
   snippet = {
@@ -47,9 +49,9 @@ cmp.setup({
       elseif luasnip.expand_or_jumpable() then
         print("in expand_or_jumpable")
         luasnip.expand_or_jump()
-      elseif has_words_before() then
-        print("in has_words_before")
-        cmp.complete()
+      --elseif has_words_before() then
+        --print("in has_words_before")
+        --cmp.complete()
       else
         print("in fallback")
         fallback()
@@ -66,13 +68,38 @@ cmp.setup({
       end
     end, { "i", "s" }),
   }),
+  formatting = {
+    fields = { "kind", "abbr", "menu" },
+    format = function(entry, vim_item)
+      -- Kind icons
+      --vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+      vim_item.menu = ({
+        nvim_lsp = "[LSP]",
+        luasnip = "[Snippet]",
+        buffer = "[Buffer]",
+        path = "[Path]",
+      })[entry.source.name]
+      return vim_item
+    end,
+  },
+  window = {
+    documentation = {
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    },
+  },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'vsnip' }, -- For vsnip users.
     { name = 'luasnip' }, -- For luasnip users.
+    { name = 'buffer' },
+    { name = 'path' },
   }, {
     { name = 'buffer' },
-  })
+  }),
+  experimental = {
+    --ghost_text = false,
+    --native_menu = false,
+  },
 })
 
   -- Set configuration for specific filetype.
@@ -122,7 +149,7 @@ lspconfig.pyright.setup {
 lspconfig.tsserver.setup {
   capabilities = capabilities
 }
-lspconfig.terraform_lsp.setup{
+lspconfig.terraformls.setup{
   capabilities = capabilities
 }
 

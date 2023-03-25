@@ -81,6 +81,7 @@ nnoremap <Leader>nt :NERDTreeToggle<CR>
 nnoremap <Leader>nf :NERDTreeFind<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+
 " ------------------------------------------------------------------------------
 " Text Editing
 " ------------------------------------------------------------------------------
