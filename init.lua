@@ -25,6 +25,8 @@ vim.keymap.set('n', 'gb', '<C-^>')
 vim.keymap.set('n', '<Leader>nt', ':NERDTreeToggle<CR>')
 vim.keymap.set('n', '<Leader>nf', ':NERDTreeFind<CR>')
 
+vim.g.NERDTreeShowHidden=1
+
 vim.opt.clipboard = 'unnamedplus' -- Copy to system clipboard
 
 vim.cmd([[
