@@ -2,7 +2,7 @@ require("mason").setup()
 require("mason-lspconfig").setup {
   ensure_installed = {
     "pyright",
-    "tsserver",
+    "ts_ls",
     "terraformls",
     --"docker_compose_language_service",
     --"dockerls",
@@ -137,7 +137,7 @@ null_ls.setup({
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.isort,
         null_ls.builtins.formatting.prettier,
-        --null_ls.builtins.diagnostics.eslint,
+        null_ls.builtins.diagnostics.eslint,
         --null_ls.builtins.completion.spell,
     },
 })
