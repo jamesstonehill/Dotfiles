@@ -76,6 +76,7 @@ return require('packer').startup(function(use)
   use "williamboman/mason-lspconfig.nvim" -- LSP config for Mason
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use 'nvimtools/none-ls.nvim' -- LSP config for null-ls
+  use 'nvimtools/none-ls-extras.nvim' -- LSP config for null-ls
 
   use 'sheerun/vim-polyglot' -- Syntax highlighting
 end)

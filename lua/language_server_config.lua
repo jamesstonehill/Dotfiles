@@ -4,8 +4,7 @@ require("mason-lspconfig").setup {
     "pyright",
     "ts_ls",
     "terraformls",
-    --"docker_compose_language_service",
-    --"dockerls",
+    "eslint",
   },
 }
 
@@ -137,8 +136,8 @@ null_ls.setup({
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.isort,
         null_ls.builtins.formatting.prettier,
-        null_ls.builtins.diagnostics.eslint,
-        --null_ls.builtins.completion.spell,
+        require("none-ls.diagnostics.eslint_d"),
+        require("none-ls.code_actions.eslint_d"),
     },
 })
 
