@@ -142,21 +142,18 @@ null_ls.setup({
 })
 
 -- Setup language servers.
-local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-lspconfig.pyright.setup {
-  capabilities = capabilities
-}
-lspconfig.ts_ls.setup {
-  capabilities = capabilities
-}
-lspconfig.terraformls.setup{
-  capabilities = capabilities
-}
+
+vim.lsp.config('pyright', { capabilities = capabilities })
+vim.lsp.config('ts_ls', { capabilities = capabilities })
+vim.lsp.config('terraformls', { capabilities = capabilities })
+vim.lsp.config('eslint', { capabilities = capabilities })
+
+vim.lsp.enable({ 'pyright', 'ts_ls', 'terraformls', 'eslint' })
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
---vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+--vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float)
 --vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 --vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 --vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
@@ -174,7 +171,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local opts = { buffer = ev.buf }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    --vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts) # TODO: FIND NEW BINDING
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     --vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts) # TODO: FIND NEW BINDING
     --

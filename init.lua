@@ -96,7 +96,7 @@ if executable('ag')
 endif
 
 " bind F to grep word under cursor
-" nnoremap F :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 ]])
 
 -- ----------------------------------------------------------------------------
