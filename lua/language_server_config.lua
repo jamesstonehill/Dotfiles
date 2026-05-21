@@ -6,6 +6,9 @@ require("mason-lspconfig").setup {
     "terraformls",
     "eslint",
   },
+  automatic_enable = {
+    exclude = { "snyk_ls" },
+  },
 }
 
 null_ls = require("null-ls")
