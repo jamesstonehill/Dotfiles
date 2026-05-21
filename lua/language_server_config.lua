@@ -146,10 +146,15 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 vim.lsp.config('pyright', { capabilities = capabilities })
 vim.lsp.config('ts_ls', { capabilities = capabilities })
-vim.lsp.config('terraformls', { capabilities = capabilities })
+vim.lsp.config('terraformls', {
+  capabilities = capabilities,
+  on_attach = function(client, _)
+    -- terraform-ls sends corrupt semantic token data (uint32 overflow values like 4294967272)
+    -- which crash Neovim when it tries to apply highlights at invalid column positions.
+    client.server_capabilities.semanticTokensProvider = nil
+  end,
+})
 vim.lsp.config('eslint', { capabilities = capabilities })
-
-vim.lsp.enable({ 'pyright', 'ts_ls', 'terraformls', 'eslint' })
 
 vim.diagnostic.config({
   virtual_text = {
@@ -188,7 +193,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local opts = { buffer = ev.buf }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    --vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts) # TODO: FIND NEW BINDING
+    --vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     --vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts) # TODO: FIND NEW BINDING
     --
